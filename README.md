@@ -55,3 +55,22 @@ bag-of-words representations. Keras provides su
 Try to identify which words are most often associated with toxic comments. Does your model have
 unintended bias? E.g. does it incorrectly associate frequently attacked identities (e.g. gay, black,
 muslim) with toxic comments? 
+
+### Notes:
+
+- Download the data from http://notendur.hi.is/steinng/kennsla/2020/ml/data/jigsaw-toxic-commentclassification-challenge.zip
+Description of the data sethttps://www.kaggle.com/c/jigsaw-toxic-comment-classificationchallenge/data
+
+- Brief overview of multi-label classification and support in sci-kit learn: https://scikitlearn.org/stable/modules/multiclass.html#multilabel-classification-format
+
+- The labels on the test set were released by Kaggle after the competition ended. To discourage
+manual labelling of the texts, the test set included many entries which were not used for evaluation
+(indicated by -1,-1,-1,-1,-1,-1 in test_labels.csv). The criteria used by Kaggle is the mean columnwise
+AUC (area under receiver operating characteristic curve – this is a useful metric for imbalanced data
+sets).
+
+- There are many readable accounts on the application of recurrent neural networks to text data, e.g.
+Deep Learning with Python by F. Chollet (the author of Keras), see also blog entries by J. Brownlee,
+e.g. https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networkspython-keras/. A nice descripton of LSTMs can be found here: https://colah.github.io/posts/2015-08-
+Understanding-LSTMs/
+Word embeddings: See e.g. the book by Chollet or https://machinelearningmastery.com/what-areword-embeddings/
