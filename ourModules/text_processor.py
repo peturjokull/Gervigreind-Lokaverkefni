@@ -1,21 +1,8 @@
-#
-#  toxic_comment_classifier.py
-#
-#
-# The example can be run by executing: `ipython tsne.py`
-#
-
 import numpy as np
-import pandas as pd
 from sklearn.feature_extraction import stop_words
 import string
-from keras.preprocessing.text import Tokenizer
 
-
-def aFunction():
-  print("This is a function")
-
-def textpreprocess(sentence):
+def textPreprocess(sentence):
     sentence = sentence.lower()
     
     #Taka út ensk stopporð
@@ -32,6 +19,11 @@ def textpreprocess(sentence):
     
     return sentence
 
+def getProcessedText(dataset):
+    x_train = dataset['comment_text'].to_numpy()
+    for i in range(len(x_train)):
+        x_train[i] = textPreprocess(x_train[i])
+    return x_train
 
 if __name__ == "__main__":
-   aFunction()
+   print("textProcessor.py was run")
